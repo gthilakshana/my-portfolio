@@ -23,14 +23,10 @@ export default function Navbar() {
         if (element) {
             element.scrollIntoView({ behavior: "smooth" });
             setActiveSection(sectionId);
-
-
             window.history.replaceState(null, "", `#${sectionId}`);
-
             if (isOpen) setIsOpen(false);
         }
     };
-
 
     useEffect(() => {
         const onScroll = () => {
@@ -42,21 +38,19 @@ export default function Navbar() {
                     const bottom = top + elem.offsetHeight;
                     if (scrollPos >= top && scrollPos < bottom) {
                         setActiveSection(item.id);
-
-
                         window.history.replaceState(null, "", `#${item.id}`);
                     }
                 }
             });
         };
-
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
     return (
-        <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full lg:w-[70%] bg-gray-50 z-50 shadow">
+        <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full lg:w-[70%] bg-white shadow-md z-50 transition-all">
             <div className="w-full mx-auto flex items-center justify-between px-4 sm:px-6 py-4">
+
 
                 <div
                     className="inline-block rounded-md cursor-pointer"
@@ -65,27 +59,28 @@ export default function Navbar() {
                     <img
                         src="/logo.png"
                         alt="Thilakshana Logo"
-                        className="h-9 md:h-12 w-[155px] sm:w-[150px] md:w-[220px] object-cover hover:scale-105 transition-transform duration-300"
+                        className="h-10 md:h-12 w-[150px] md:w-[220px] object-cover hover:scale-105 transition-transform duration-300"
                     />
                 </div>
 
 
-                <nav className="hidden md:flex space-x-4  text-base uppercase items-center justify-end font-medium w-[80%]">
+                <nav className="hidden md:flex space-x-4 text-base uppercase items-center justify-end font-medium w-[80%]">
                     {menuItems.map((item) => (
                         <div
                             key={item.id}
-                            className={`cursor-pointer py-3 px-3 flex items-center justify-center gap-2 transition-colors duration-300 ${activeSection === item.id
-                                ? "bg-gray-800 text-white"
-                                : "bg-transparent text-gray-900 hover:bg-gray-700 hover:text-yellow-300"
+                            className={`cursor-pointer py-2 px-4 rounded-lg transition-all duration-300 ${activeSection === item.id
+                                ? "bg-yellow-100 text-yellow-600"
+                                : "text-gray-800 hover:bg-yellow-50 hover:text-yellow-500"
                                 }`}
                             onClick={() => handleScroll(item.id)}
                         >
-                            <span>{item.name}</span>
+                            {item.name}
                         </div>
                     ))}
 
+
                     <div
-                        className="p-2 text-white text-[18px] hover:text-yellow-300 transition-colors cursor-pointer border-2 border-gray-500"
+                        className="p-2 text-gray-800 hover:text-yellow-500 border-2 border-gray-200 rounded-lg cursor-pointer transition-colors"
                         onClick={goToLogin}
                     >
                         <FaUser />
@@ -96,7 +91,7 @@ export default function Navbar() {
                 <div className="md:hidden flex items-center">
                     <button
                         onClick={toggleMenu}
-                        className="text-white text-2xl focus:outline-none cursor-pointer hover:text-yellow-400 transition-colors"
+                        className="text-gray-800 text-2xl focus:outline-none cursor-pointer hover:text-yellow-500 transition-colors"
                     >
                         {isOpen ? <FaTimes /> : <FaBars />}
                     </button>
@@ -105,22 +100,23 @@ export default function Navbar() {
 
 
             {isOpen && (
-                <div className="md:hidden bg-gray-900 w-full px-4 sm:px-6 pb-4 flex flex-col space-y-2">
+                <div className="md:hidden bg-white w-full px-4 sm:px-6 pb-4 flex flex-col space-y-2 shadow-md rounded-b-lg transition-all">
                     {menuItems.map((item) => (
                         <div
                             key={item.id}
-                            className={`cursor-pointer py-2 px-3 flex items-center justify-center gap-2 transition-colors duration-300 ${activeSection === item.id
-                                ? "bg-gray-800 text-white"
-                                : "bg-transparent text-white hover:bg-gray-700 hover:text-yellow-300"
+                            className={`cursor-pointer py-2 px-4 rounded-lg transition-all duration-300 ${activeSection === item.id
+                                ? "bg-yellow-100 text-yellow-600"
+                                : "text-gray-800 hover:bg-yellow-50 hover:text-yellow-500"
                                 }`}
                             onClick={() => handleScroll(item.id)}
                         >
-                            <span>{item.name}</span>
+                            {item.name}
                         </div>
                     ))}
 
+
                     <div
-                        className="p-2 text-white text-[18px] hover:text-yellow-300 transition-colors cursor-pointer border-2 border-gray-500 mt-2"
+                        className="p-2 text-gray-800 hover:text-yellow-500 border-2 border-gray-200 rounded-lg cursor-pointer mt-2 transition-colors"
                         onClick={goToLogin}
                     >
                         <FaUser />

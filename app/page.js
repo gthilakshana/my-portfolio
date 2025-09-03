@@ -34,7 +34,7 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full lg:w-[70%] min-h-screen mx-auto">
+    <div className="w-full lg:w-[70%] min-h-screen mx-auto border border-gray-500">
       
       <Navbar />
 
