@@ -9,6 +9,7 @@ import AboutSection from "../components/AboutSection";
 import ProjectsSection from "../components/ProjectsSection";
 import SkillsSection from "../components/SkillsSection";
 import ContactSection from "../components/ContactSection";
+import ResumeSection from "../components/ResumeSection";
 import Footer from "../components/ui/Footer";
 
 export default function Home() {
@@ -33,12 +34,12 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full lg:w-[70%] min-h-screen mx-auto  ">
+    <div className="w-full lg:w-[70%] min-h-screen mx-auto">
       
       <Navbar />
 
     
-      <div className="border border-gray-200" >
+      <div  >
         {loadingSections ? (
           <div className="flex items-center justify-center h-[100vh]">
             <ScaleLoader color="#FACC3E" loading={loadingSections} size={15} />
@@ -47,6 +48,7 @@ export default function Home() {
           <main>
             <section id="home"><HomeSection /></section>
             <section id="about"><AboutSection /></section>
+            <section id="resume"><ResumeSection /></section>
             <section id="projects"><ProjectsSection /></section>
             <section id="skills"><SkillsSection /></section>
             <section id="contact"><ContactSection /></section>
