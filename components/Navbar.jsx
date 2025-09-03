@@ -6,6 +6,7 @@ import { FaBars, FaTimes, FaUser } from "react-icons/fa";
 const menuItems = [
     { name: "Home", id: "home" },
     { name: "About", id: "about" },
+    { name: "Resume", id: "resume" },
     { name: "Projects", id: "projects" },
     { name: "Skills", id: "skills" },
     { name: "Contact", id: "contact" },
@@ -48,9 +49,8 @@ export default function Navbar() {
     }, []);
 
     return (
-        <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full lg:w-[70%] bg-white shadow-md z-50 transition-all">
-            <div className="w-full mx-auto flex items-center justify-between px-4 sm:px-6 py-4">
-
+        <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full lg:w-[70%] bg-gray-50 z-50 shadow-md">
+            <div className="w-full mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
 
                 <div
                     className="inline-block rounded-md cursor-pointer"
@@ -59,68 +59,66 @@ export default function Navbar() {
                     <img
                         src="/logo.png"
                         alt="Thilakshana Logo"
-                        className="h-10 md:h-12 w-[150px] md:w-[220px] object-cover hover:scale-105 transition-transform duration-300"
+                        className="h-9 md:h-12 w-[155px] sm:w-[150px] md:w-[220px] object-cover hover:scale-105 transition-transform duration-300"
                     />
                 </div>
 
 
-                <nav className="hidden md:flex space-x-4 text-base uppercase items-center justify-end font-medium w-[80%]">
+                <nav className="hidden md:flex space-x-4 text-sm uppercase items-center font-medium">
                     {menuItems.map((item) => (
-                        <div
+                        <button
                             key={item.id}
-                            className={`cursor-pointer py-2 px-4 rounded-lg transition-all duration-300 ${activeSection === item.id
-                                ? "bg-yellow-100 text-yellow-600"
-                                : "text-gray-800 hover:bg-yellow-50 hover:text-yellow-500"
+                            className={`px-4 py-2  transition-colors duration-300 ${activeSection === item.id
+                                ? "bg-gray-900 text-white"
+                                : "text-gray-800 hover:bg-gray-800 hover:text-yellow-400"
                                 }`}
                             onClick={() => handleScroll(item.id)}
                         >
                             {item.name}
-                        </div>
+                        </button>
                     ))}
 
-
-                    <div
-                        className="p-2 text-gray-800 hover:text-yellow-500 border-2 border-gray-200 rounded-lg cursor-pointer transition-colors"
+                    <button
+                        className="ml-4 p-2  border-1 border-yellow-400 text-gray-800 hover:bg-gray-900 hover:text-yellow-400 transition-colors duration-300"
                         onClick={goToLogin}
                     >
                         <FaUser />
-                    </div>
+                    </button>
                 </nav>
 
-
+                {/* Mobile Menu Toggle */}
                 <div className="md:hidden flex items-center">
                     <button
                         onClick={toggleMenu}
-                        className="text-gray-800 text-2xl focus:outline-none cursor-pointer hover:text-yellow-500 transition-colors"
+                        className="text-gray-900 text-2xl focus:outline-none hover:text-gray-700 transition-colors"
                     >
                         {isOpen ? <FaTimes /> : <FaBars />}
                     </button>
                 </div>
             </div>
 
-
+            {/* Mobile Menu */}
             {isOpen && (
-                <div className="md:hidden bg-white w-full px-4 sm:px-6 pb-4 flex flex-col space-y-2 shadow-md rounded-b-lg transition-all">
+                <div className="md:hidden bg-white border-t border-gray-200 w-full px-6 py-4 flex flex-col space-y-2 shadow-inner">
                     {menuItems.map((item) => (
-                        <div
+                        <button
                             key={item.id}
-                            className={`cursor-pointer py-2 px-4 rounded-lg transition-all duration-300 ${activeSection === item.id
-                                ? "bg-yellow-100 text-yellow-600"
-                                : "text-gray-800 hover:bg-yellow-50 hover:text-yellow-500"
+                            className={`w-full text-left px-3 py-2 rounded-md transition-colors duration-300 ${activeSection === item.id
+                                ? "bg-gray-900 text-white"
+                                : "text-gray-800 hover:bg-gray-800 hover:text-yellow-400"
                                 }`}
                             onClick={() => handleScroll(item.id)}
                         >
                             {item.name}
-                        </div>
+                        </button>
                     ))}
 
-
-                    <div
-                        className="p-2 text-gray-800 hover:text-yellow-500 border-2 border-gray-200 rounded-lg cursor-pointer mt-2 transition-colors"
+                    <button
+                        className="mt-3 p-2 rounded-md border-2 border-gray-700 text-gray-800 hover:bg-gray-900 hover:text-yellow-400 transition-colors duration-300"
                         onClick={goToLogin}
                     >
                         <FaUser />
-                    </div>
+                    </button>
                 </div>
             )}
         </div>
