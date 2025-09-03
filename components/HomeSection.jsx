@@ -120,7 +120,7 @@ export default function HomeSection() {
             <div className="fixed bottom-4 left-4 flex flex-col space-y-4 z-50">
                 <button
                     onClick={() => window.open("https://wa.me/94774571927", "_blank")}
-                    className="flex items-center justify-center w-13 h-13  bg-green-500 
+                    className="flex items-center justify-center w-13 h-13 rounded-full bg-green-500 
           text-white shadow-lg hover:scale-110 transform transition duration-300"
                 >
                     <FaWhatsapp className="text-2xl" />
