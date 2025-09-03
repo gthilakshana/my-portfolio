@@ -39,23 +39,23 @@ export default function HomeSection() {
         return () => clearInterval(interval);
     }, []);
 
-    const techIcons = [
-        { icon: <FaNodeJs className="text-green-400" /> },
-        { icon: <SiExpress className="text-gray-200" /> },
-        { icon: <FaJava className="text-red-500" /> },
-        { icon: <SiFigma className="text-pink-400" /> },
-        { icon: <FaReact className="text-blue-400" /> },
-        { icon: <SiMongodb className="text-green-500" /> },
-        { icon: <SiMysql className="text-blue-300" /> },
-        { icon: <FaHtml5 className="text-orange-500" /> },
-        { icon: <FaCss3Alt className="text-blue-500" /> },
-        { icon: <FaBootstrap className="text-purple-500" /> },
-        { icon: <SiTailwindcss className="text-sky-400" /> },
-        { icon: <FaGitAlt className="text-red-500" /> },
-        { icon: <FaGithub className="text-white" /> },
-        { icon: <FaLinux className="text-gray-100" /> },
-        { icon: <FaAws className="text-yellow-400" /> },
-    ];
+    // const techIcons = [
+    //     { icon: <FaNodeJs className="text-green-400" /> },
+    //     { icon: <SiExpress className="text-gray-200" /> },
+    //     { icon: <FaJava className="text-red-500" /> },
+    //     { icon: <SiFigma className="text-pink-400" /> },
+    //     { icon: <FaReact className="text-blue-400" /> },
+    //     { icon: <SiMongodb className="text-green-500" /> },
+    //     { icon: <SiMysql className="text-blue-300" /> },
+    //     { icon: <FaHtml5 className="text-orange-500" /> },
+    //     { icon: <FaCss3Alt className="text-blue-500" /> },
+    //     { icon: <FaBootstrap className="text-purple-500" /> },
+    //     { icon: <SiTailwindcss className="text-sky-400" /> },
+    //     { icon: <FaGitAlt className="text-red-500" /> },
+    //     { icon: <FaGithub className="text-white" /> },
+    //     { icon: <FaLinux className="text-gray-100" /> },
+    //     { icon: <FaAws className="text-yellow-400" /> },
+    // ];
 
     const socialLinks = [
         { icon: <FaEnvelope />, url: "mailto:gavrawavanniarachchi@gmail.com" },
@@ -74,7 +74,7 @@ export default function HomeSection() {
                     Hey, I'm Gavrawa Thilakshana
                 </p>
 
-                <h1 className="text-3xl md:text-6xl font-extrabold text-white mt-4 leading-snug uppercase tracking-tight">
+                <h1 className="text-3xl md:text-4xl font-extrabold text-white mt-4 leading-snug uppercase tracking-tight">
                     {textArray[textIndex]}
                 </h1>
 
@@ -95,7 +95,7 @@ export default function HomeSection() {
                             href={link.url}
                             target="_blank"
                             rel="noreferrer"
-                            className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-700 text-white hover:bg-yellow-500 hover:text-gray-900 transition transform hover:scale-110 shadow-lg"
+                            className="w-12 h-12 flex items-center justify-center  bg-gray-700 text-white hover:bg-yellow-500 hover:text-gray-900 transition transform hover:scale-110 shadow-lg"
                         >
                             {link.icon}
                         </a>
@@ -104,28 +104,15 @@ export default function HomeSection() {
             </div>
 
 
-            <div className="hidden md:flex w-full md:w-1/2 justify-center items-center">
-                <div className="relative w-80 h-80 lg:w-[500px] lg:h-[500px] flex items-center justify-center">
+            <div className="hidden md:flex w-full md:w-1/2 justify-center items-center ">
+                <div className="relative w-80 h-80 lg:w-[500px] lg:h-[500px] flex items-center justify-center ">
                     <img
-                        src="/logoP.gif"
+                        src="/compu.gif"
                         alt="Profile"
-                        className="relative z-10 w-64 h-64 lg:w-80 lg:h-80 rounded-full shadow-xl border-4 border-yellow-400 object-cover"
+                        className="relative z-10 w-64 h-64 lg:w-80 lg:h-80 object-cover"
                     />
 
-                    {techIcons.map((item, i) => {
-                        const angle = (i / techIcons.length) * 360;
-                        return (
-                            <div
-                                key={i}
-                                className="absolute text-2xl lg:text-4xl drop-shadow-glow"
-                                style={{
-                                    transform: `rotate(${angle}deg) translate(220px) rotate(-${angle}deg)`,
-                                }}
-                            >
-                                {item.icon}
-                            </div>
-                        );
-                    })}
+
                 </div>
             </div>
 
@@ -133,7 +120,7 @@ export default function HomeSection() {
             <div className="fixed bottom-4 left-4 flex flex-col space-y-4 z-50">
                 <button
                     onClick={() => window.open("https://wa.me/94774571927", "_blank")}
-                    className="flex items-center justify-center w-14 h-14 rounded-full bg-green-500 
+                    className="flex items-center justify-center w-13 h-13  bg-green-500 
           text-white shadow-lg hover:scale-110 transform transition duration-300"
                 >
                     <FaWhatsapp className="text-2xl" />

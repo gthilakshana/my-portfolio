@@ -32,7 +32,7 @@ export default function ResumeSection() {
             className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black py-20 px-6 md:px-16 overflow-hidden"
         >
             <div className="max-w-6xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-extrabold text-yellow-400 mb-14 uppercase tracking-tight">
+                <h2 className="text-3xl md:text-4xl font-extrabold text-yellow-400 mb-14 uppercase tracking-tight">
                     Resume
                 </h2>
 
@@ -131,7 +131,7 @@ export default function ResumeSection() {
                         <div className="mt-6 flex justify-end">
                             <button
                                 onClick={() => setShowMore(!showMore)}
-                                className="p-3 rounded-full bg-yellow-500 text-white shadow-md hover:bg-yellow-600 transition transform hover:scale-110 duration-300"
+                                className="p-3 rounded-full cursor-pointer bg-yellow-500 text-white shadow-md hover:bg-yellow-600 transition transform hover:scale-110 duration-300"
                             >
                                 {showMore ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
                             </button>

@@ -19,8 +19,8 @@ export default function ProjectsSection() {
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-14 max-w-6xl mx-auto gap-6">
                 <div>
                     <p className="text-sm font-medium text-gray-400">Recent Projects</p>
-                    <h2 className="text-3xl md:text-4xl font-bold text-white uppercase flex items-center gap-3">
-                        <FaCode className="text-yellow-400 text-xl" />
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-yellow-400 mb-14 uppercase tracking-tight">
+
                         Projects
                     </h2>
                 </div>
@@ -49,7 +49,7 @@ export default function ProjectsSection() {
                 <div className="mt-10 flex justify-center">
                     <span
                         onClick={() => setShowMore(!showMore)}
-                        className="p-3 rounded-full bg-gray-700 text-white cursor-pointer shadow-lg hover:bg-yellow-500 hover:text-gray-900 transition transform hover:scale-110"
+                        className="p-3 rounded-full cursor-pointer bg-gray-700 text-white cursor-pointer shadow-lg hover:bg-yellow-500 hover:text-gray-900 transition transform hover:scale-110"
                     >
                         {showMore ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
                     </span>

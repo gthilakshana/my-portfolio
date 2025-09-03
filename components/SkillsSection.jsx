@@ -40,7 +40,7 @@ export default function SkillsSection() {
             <div className="max-w-6xl mx-auto">
 
                 <div className="mb-12 text-center md:text-left">
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-yellow-400 tracking-tight uppercase">
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-yellow-400 tracking-tight uppercase">
                         Skills
                     </h2>
                     <p className="mt-4 text-gray-400 text-lg max-w-2xl">

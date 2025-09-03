@@ -16,7 +16,7 @@ export default function Footer() {
                         href="https://github.com/gthilakshana"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full text-gray-300 hover:bg-yellow-500 hover:text-white shadow-lg transition transform hover:scale-110"
+                        className="w-10 h-10 flex items-center justify-center bg-gray-800 text-gray-300 hover:bg-yellow-500 hover:text-white shadow-lg transition transform hover:scale-110"
                     >
                         <FaGithub />
                     </a>
@@ -24,13 +24,13 @@ export default function Footer() {
                         href="https://linkedin.com/in/gavrawa-thilakshana"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full text-gray-300 hover:bg-yellow-500 hover:text-white shadow-lg transition transform hover:scale-110"
+                        className="w-10 h-10 flex items-center justify-center bg-gray-800 text-gray-300 hover:bg-yellow-500 hover:text-white shadow-lg transition transform hover:scale-110"
                     >
                         <FaLinkedin />
                     </a>
                     <a
                         href="mailto:gavrawavanniarachchi@gmail.com"
-                        className="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full text-gray-300 hover:bg-yellow-500 hover:text-white shadow-lg transition transform hover:scale-110"
+                        className="w-10 h-10 flex items-center justify-center bg-gray-800 text-gray-300 hover:bg-yellow-500 hover:text-white shadow-lg transition transform hover:scale-110"
                     >
                         <FaEnvelope />
                     </a>
@@ -38,7 +38,7 @@ export default function Footer() {
                         href="https://instagram.com/gavrawa_thilakshana_"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full text-gray-300 hover:bg-yellow-500 hover:text-white shadow-lg transition transform hover:scale-110"
+                        className="w-10 h-10 flex items-center justify-center bg-gray-800 text-gray-300 hover:bg-yellow-500 hover:text-white shadow-lg transition transform hover:scale-110"
                     >
                         <FaInstagram />
                     </a>

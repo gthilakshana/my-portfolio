@@ -6,7 +6,7 @@ export default function ContactSection() {
         >
             <div className="max-w-6xl mx-auto text-start">
 
-                <h2 className="text-4xl md:text-5xl font-extrabold text-yellow-400 uppercase tracking-tight">
+                <h2 className="text-3xl md:text-4xl font-extrabold text-yellow-400 tracking-tight uppercase">
                     Contact
                 </h2>
                 <p className="text-gray-400 mt-3 text-lg max-w-2xl">

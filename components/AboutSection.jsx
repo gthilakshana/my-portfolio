@@ -18,7 +18,7 @@ export default function AboutSection() {
 
 
                 <div className="text-center md:text-left">
-                    <h2 className="text-4xl md:text-5xl font-extrabold uppercase text-yellow-400 mb-6 tracking-tight">
+                    <h2 className="text-3xl md:text-4xl font-extrabold uppercase text-yellow-400 mb-6 tracking-tight">
                         About Me
                     </h2>
                     <p className="text-gray-300 leading-relaxed mb-6">
