@@ -63,13 +63,13 @@ export default function Navbar() {
                     />
                 </div>
 
-
-                <nav className="hidden md:flex space-x-4 text-sm uppercase items-center font-medium">
+                {/* Desktop Menu */}
+                <nav className="hidden md:flex space-x-4 text-sm items-center font-medium">
                     {menuItems.map((item) => (
                         <button
                             key={item.id}
-                            className={`px-4 py-2  transition-colors duration-300 ${activeSection === item.id
-                                ? "bg-gray-900 text-white"
+                            className={`px-4 py-2 uppercase transition-colors duration-300 ${activeSection === item.id
+                                ? "bg-gray-700 text-white"
                                 : "text-gray-800 hover:bg-gray-800 hover:text-yellow-400"
                                 }`}
                             onClick={() => handleScroll(item.id)}
@@ -79,7 +79,7 @@ export default function Navbar() {
                     ))}
 
                     <button
-                        className="ml-4 p-2  border-1 border-yellow-400 text-gray-800 hover:bg-gray-900 hover:text-yellow-400 transition-colors duration-300"
+                        className="ml-4 p-2 border-1 border-yellow-400 text-gray-800 hover:bg-gray-900 hover:text-yellow-400 transition-colors duration-300"
                         onClick={goToLogin}
                     >
                         <FaUser />
@@ -97,30 +97,44 @@ export default function Navbar() {
                 </div>
             </div>
 
-            {/* Mobile Menu */}
-            {isOpen && (
-                <div className="md:hidden bg-white border-t border-gray-200 w-full px-6 py-4 flex flex-col space-y-2 shadow-inner">
+
+            <div
+                className={`fixed top-0 right-0 h-screen w-64 transform transition-transform duration-300 
+  ${isOpen ? "translate-x-0" : "translate-x-full"} 
+  bg-gray-900 text-white shadow-2xl z-[60] md:hidden`}
+            >
+                <nav className="flex flex-col mt-6 space-y-2 px-6 uppercase">
                     {menuItems.map((item) => (
-                        <button
+                        <div
                             key={item.id}
-                            className={`w-full text-left px-3 py-2 rounded-md transition-colors duration-300 ${activeSection === item.id
-                                ? "bg-gray-900 text-white"
-                                : "text-gray-800 hover:bg-gray-800 hover:text-yellow-400"
+                            className={`flex items-center gap-4 py-2 px-3 cursor-pointer transition-colors ${activeSection === item.id
+                                ? "bg-gray-700 text-white"
+                                : "hover:bg-gray-800"
                                 }`}
                             onClick={() => handleScroll(item.id)}
                         >
-                            {item.name}
-                        </button>
+                            <span className="text-md">{item.name}</span>
+                        </div>
                     ))}
+                </nav>
 
-                    <button
-                        className="mt-3 p-2 rounded-md border-2 border-gray-700 text-gray-800 hover:bg-gray-900 hover:text-yellow-400 transition-colors duration-300"
-                        onClick={goToLogin}
-                    >
-                        <FaUser />
-                    </button>
+                <div
+                    className="flex items-center gap-4 py-2 px-6 mt-6 cursor-pointer hover:bg-yellow-400 transition-colors absolute bottom-6 w-full"
+                    onClick={goToLogin}
+                >
+                    <FaUser className="text-xl" />
+                    <span className="text-md">Login</span>
                 </div>
+            </div>
+
+            {/* Overlay for mobile menu */}
+            {isOpen && (
+                <div
+                    className="fixed inset-0 bg-black/40 z-[50] md:hidden"
+                    onClick={toggleMenu}
+                ></div>
             )}
+
         </div>
     );
 }
