@@ -64,11 +64,11 @@ export default function Navbar() {
                 </div>
 
                 {/* Desktop Menu */}
-                <nav className="hidden md:flex space-x-4 text-sm items-center font-medium">
+                <nav className="hidden md:flex space-x-2 text-sm items-center font-medium">
                     {menuItems.map((item) => (
                         <button
                             key={item.id}
-                            className={`px-4 py-2 uppercase transition-colors duration-300 ${activeSection === item.id
+                            className={`px-4 py-4 uppercase transition-colors duration-300 ${activeSection === item.id
                                 ? "bg-gray-700 text-white"
                                 : "text-gray-800 hover:bg-gray-800 hover:text-yellow-400"
                                 }`}
