@@ -53,7 +53,7 @@ export default function ResumeSection() {
                                         <img
                                             src={edu.img}
                                             alt={edu.title}
-                                            className="w-14 h-14 object-contain rounded-lg border border-gray-700"
+                                            className="w-14 h-14 object-contain rounded-lg border bg-white border-gray-700"
                                         />
                                         <div>
                                             <h4 className="text-lg font-semibold text-gray-100">
@@ -94,7 +94,7 @@ export default function ResumeSection() {
                                             <img
                                                 src={cert.img}
                                                 alt={cert.title}
-                                                className="w-14 h-14 object-contain rounded-lg border border-gray-700"
+                                                className="w-14 h-14 object-contain rounded-lg border bg-gray-50  border-gray-700"
                                             />
                                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 flex items-center justify-center transition duration-300 rounded-lg">
                                                 <FiSearch className="text-white text-lg opacity-0 group-hover:opacity-100 transition duration-300" />
