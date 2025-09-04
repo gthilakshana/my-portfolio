@@ -14,14 +14,18 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "My Portfolio",
   description: "Welcome to my portfolio website",
+  icons: {
+    icon: "/logoP.png", 
+  },
 };
+
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/logo-icon.png" />
+        <link rel="icon" href="/logoP.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100 text-gray-100`}
